@@ -1,0 +1,444 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<head>
+    <title>
+
+
+    </title>
+
+    <script src="~/js/jsvariables.js"></script>
+
+   
+     
+
+    <script>
+
+            function showCar() 
+           {
+          
+           
+                var car = document.getElementById("txtEnter").value;
+                
+                if (car == 'Car')
+                {
+                   
+
+                    document.getElementById("txtName").value = "Volvo";
+
+                   
+                 
+                }
+                else 
+                {
+                  
+                    document.getElementById("txtName").value = "Please enter the text Car";
+                   
+                }
+        }
+
+
+  
+
+
+    </script>
+
+
+
+</head>
+
+<div class="text-center">
+    <h1 class="display-4">Javascript Samples</h1>
+
+
+    <p></p>
+    <div>
+        <table>
+            <tr>
+                <td>
+
+                    <p id="demo"></p>
+
+
+                </td>
+                <td>
+                    <button type="button"
+                            onclick="document.getElementById('demo').innerHTML = Date()">
+                        Click me to display Date and Time.
+                    </button>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Enter "Car"
+                </td>
+                <td>
+                    <input type="text" id="txtEnter" name="textEnter"   >
+                    <button type="button"                             onclick="showCar();">
+                        Click me .
+                    </button>
+
+                </td>
+                <td>
+
+                    <input type="text" id="txtName" name="txtName"  />
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="txtNum1" name="txtNum1" />
+
+                </td>
+                <td>
+
+                    <input type="text" id="txtNum2" name="txtNum2" />
+
+                </td>
+                <td>
+                    <button  id="btnAdd" name="btnAdd"   >
+                        
+                        Add 2 +3
+                    </button>
+                    <input type="text" id="txtAns" name="txtAns" />
+                    <script>
+                        document.getElementById("btnAdd").addEventListener("click", function () {
+
+
+
+                            var number1 = parseFloat(document.getElementById('txtNum1').value);
+                            var number2 = parseFloat(document.getElementById('txtNum2').value);
+
+                            document.getElementById('txtAns').value = addNumbers(number1, number2);
+
+
+                        });
+                    </script>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <script>
+            // Create an Object:
+
+            function showCarDetails()
+            {
+                const car = { brand: "Fiat", model: "500", color: "white" };
+
+                document.getElementById("txtBrand").value = car.brand;
+                document.getElementById("txtModel").value = car.model;
+                document.getElementById("txtColor").value = car.color;
+
+            }
+             
+        </script>
+
+        <table>
+        <tr>
+        <td>
+                    Car details from Object    <button id="btnCarDetails" name="btnCarDetails" onclick="showCarDetails();">
+                        Show data
+                    </button>
+        </td>
+
+        </tr>
+            <tr>
+                <td>
+                    The car Brand is     <input type="text" id="txtBrand" name="txtBrand" /> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    The car Model is   <input type="text" id="txtModel" name="txtModel" /> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    The car Color is   <input type="text" id="txtColor" name="txtColor" /> 
+                </td>
+            </tr>
+
+        </table>
+      
+    </div>
+   <br />
+   <br />
+
+
+   <div>
+
+   <script>
+
+            myObj = {
+                name: "David Beckham",
+                age: 30,
+                myCars: {
+                    car1: "Ford",
+                    car2: "BMW",
+                    car3: "Fiat"
+                }
+            }
+
+            function showPersonCarDetails()
+            {
+
+                document.getElementById("txtPersonName").value = myObj.name;
+                document.getElementById("txtPersonAge").value = myObj.age;
+                document.getElementById("txtCar1").value = myObj.myCars.car1;
+                document.getElementById("txtCar2").value = myObj.myCars.car2;
+                document.getElementById("txtCar3").value = myObj.myCars.car3;
+
+             }
+
+
+   </script>
+
+   <table>
+  
+            <tr>
+            <td>
+                    Person Details <button id="btnPersonCarDetails" name="btnPersonCarDetails" onclick="showPersonCarDetails();">
+                        Show data
+                    </button>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                    Name        <input type="text" id="txtPersonName" name="txtPersonName" />
+                </td>
+            </tr>
+
+            <tr>
+            <td>
+                    Age         <input type="text" id="txtPersonAge" name="txtPersonAge" />
+            </td>
+            </tr>
+
+            <tr>
+            <td>
+                    My cars 
+            </td>
+            </tr>
+
+            <tr>
+            <td>
+                    First car           <input type="text" id="txtCar1" name="txtCar1" />
+            </td>
+            </tr>
+
+            <tr>
+            <td>
+                    Second car             <input type="text" id="txtCar2" name="txtCar2" />
+            </td>
+            </tr>
+          
+            <tr>
+            <td>
+                    Third  car      <input type="text" id="txtCar3" name="txtCar3" />
+            </td>
+            </tr>
+            
+            
+            <tr>
+            <td>
+            </td>
+            </tr>
+
+   
+   </table>
+
+   
+   </div>
+
+   <br /> <br />
+   <div>
+   <script>
+             person = {
+                firstName: "David",
+                lastName: "Beckham",
+                id: 2266,
+                fullName: function () {
+                    return this.firstName + " " + this.lastName;
+                }
+            };
+            
+
+            function showFullName()
+            {
+                
+
+                document.getElementById("txtFullName").value = person.fullName();
+
+            }
+
+             
+
+   </script>
+   <table>
+   <tr>
+                <td><button id="btnPersonCarDetails" name="btnPersonCarDetails" onclick="showFullName();"> Show full name  </button></td>
+   </tr>
+            <tr>
+                <td> Full name      <input type="text" id="txtFullName" name="txtFullName" /></td>
+            </tr>
+   </table>
+
+   </div>
+
+   <br />
+   <br />
+
+   <div>
+   
+   <script>
+
+            const cars = ["Honda", "Toyota", "KIA","Saab", "Volvo", "BMW"];
+
+            function showCarName()
+            {
+
+                
+                document.getElementById("carList").innerHTML = cars;
+              
+
+                document.getElementById("txtCarName1").value = cars[0];
+                document.getElementById("txtCarName2").value = cars[1];
+                document.getElementById("txtCarName3").value = cars[2];
+                document.getElementById("txtCarName4").value = cars[3];
+                document.getElementById("txtCarName5").value = cars[4];
+
+                document.getElementById("txtCarName6").value = cars.length ;
+                
+            }
+
+   </script>
+
+   <table>
+             <tr>
+                <td><button id="btnPersonCarList" name="btnPersonCarList" onclick="showCarName();"> Show Cars  list  </button></td>
+            </tr>
+            <tr>
+            <td>
+                    <p id="carList"></p>
+            </td>
+               
+            </tr>
+            <tr>
+                <td>   <input type="text" id="txtCarName1" /></td>
+            </tr>
+            <tr>
+                <td>   <input type="text" id="txtCarName2" /> </td>
+            </tr>
+            <tr>
+                <td>   <input type="text" id="txtCarName3" /></td>
+            </tr>
+            <tr>
+                <td>   <input type="text" id="txtCarName4" /></td>
+            </tr>
+            <tr>
+                <td>  <input type="text" id="txtCarName5" /></td>
+            </tr>
+            <tr>
+                <td>  Number of cars: <input type="text" id="txtCarName6" /></td>
+            </tr>
+   </table>
+
+   </div>
+   <br /> <br /><br />
+
+   <div>
+
+        <p id="fruitsDemo"></p>
+        <script>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            let fLen = fruits.length;
+
+            let text = "<ul>";
+            for (let i = 0; i < fLen; i++) {
+                text += "<li>" + (i+1) + "          "+fruits[i] + "</li>";
+            }
+            text += "</ul>";
+
+            document.getElementById("fruitsDemo").innerHTML = text;
+        </script>
+   
+   </div>
+
+   <br /><br />
+   <div>
+       <script>
+
+            const fruitList = ["Banana", "Orange", "Apple"];
+           
+
+           function addNewFruit()
+           {
+               
+           
+                fruitList.push(document.getElementById("txtNewFruit").value);
+
+               
+
+                let fLen = fruitList.length;
+                                let text = "<ul>";
+                for (let i = 0; i < fLen; i++) {
+                    text += "<li>" + (i + 1) + "          " + fruitList[i] + "</li>";
+                }
+                text += "</ul>";
+
+         
+                document.getElementById("listAllFruits").innerHTML = text;
+
+           }
+
+       </script>
+
+       <table>
+           <tr>
+               <td>Add a fruit</td>
+                <td><input type="text" id="txtNewFruit" /></td>
+                <td><button id="btnAddFruit" name="btnAddFruit" onclick="addNewFruit();"> Add fruit  </button></td>
+           </tr>
+           <tr>
+               <td>
+                    <p id="listAllFruits"></p>
+               </td>
+           </tr>
+
+       </table>
+   </div>
+   <br /><br />
+
+    <p id="MyCars"></p>
+
+    <script>
+        let x = "";
+        const myObj = {
+            name: "Borris Johnson",
+            age: 48,
+            cars: [
+                { name: "Mercedes", models: ["GLE", "S-Class", "SLK"] },
+                { name: "BMW", models: ["320", "X3", "X5"] },
+                { name: "Tesla", models: ["Model 3", "Model X"] }
+            ]
+        }
+
+        for (let i in myObj.cars) {
+            x += "<h2>" + myObj.cars[i].name + "</h2>";
+            for (let j in myObj.cars[i].models) {
+                x += myObj.cars[i].models[j] + "<br>";
+            }
+        }
+
+
+        document.getElementById("MyCars").innerHTML = x;
+
+
+</script>
+
+
+</div>
