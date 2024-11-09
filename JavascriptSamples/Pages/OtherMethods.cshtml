@@ -1,0 +1,273 @@
+﻿@page
+@model JavascriptSamples.Pages.OtherMethodsModel
+@{
+}
+<head>
+    <title>
+
+
+    </title>
+
+
+
+</head>
+
+<p>Search a string for "developers", and display the position of the match:</p>
+
+<p id="pShowIndex"></p>
+
+<script>
+    let textIndex = "JavaScript is a programming language that allows developers to create interactive web pages.";
+    let indNumber = textIndex.search("developers");
+    document.getElementById("pShowIndex").innerHTML = indNumber;
+</script>
+
+<br />
+<p>Replace "developers" with "programmers" in the text below</p>
+
+<button onclick="replaceText()">Replace text</button>
+
+<p id="pTextToSearch">JavaScript is a programming language that allows developers to create interactive web pages.</p>
+
+<script>
+    function replaceText() {
+        let textToSearch = document.getElementById("pTextToSearch").innerHTML;
+        document.getElementById("pTextToSearch").innerHTML =
+            textToSearch.replace("developers", "programmers");
+    }
+</script>
+<br />
+
+<h2>JavaScript Error Handling</h2>
+
+ 
+
+<p id="pErrorHandling"></p>
+
+<script>
+    try {
+        adddlert("Welcome to the team");
+    }
+    catch (err) {
+        document.getElementById("pErrorHandling").innerHTML = err.message;
+    }
+</script>
+
+<br />
+
+<p>Please input a number between 5 and 10:</p>
+
+<input id="txtInputNumber" type="text">
+<button type="button" onclick="checkNumber()">Enter a number</button>
+<p id="pErrMsg"></p>
+
+<script>
+    function checkNumber() {
+        const message = document.getElementById("pErrMsg");
+        message.innerHTML = "";
+        let x = document.getElementById("txtInputNumber").value;
+        try {
+            if (x.trim() == "") throw "empty";
+            if (isNaN(x)) throw "not a number";
+            x = Number(x);
+            if (x < 5) throw "too low";
+            if (x > 10) throw "too high";
+        }
+        catch (err) {
+            message.innerHTML = "Input is " + err;
+        }
+        finally {
+            document.getElementById("txtInputNumber").value = "";
+        }
+    }
+</script>
+<br /><br />
+
+<h4>The use of this  Keyword</h4>
+ 
+<p id="pPersonName"></p>
+
+<script>
+    
+    const person = {
+        firstName: "Borris",
+        lastName: "Johnson",
+        id: 49,
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+   
+    document.getElementById("pPersonName").innerHTML = person.fullName();
+
+</script>
+<br />
+<h4>The Arrow Function :  let fnMultiple = (a, b) => a * b  (4*5)</h4>
+
+<p id="pAnswer"></p>
+
+<script>
+    let fnMultiple = (a, b) => a * b;
+    document.getElementById("pAnswer").innerHTML = fnMultiple(4, 5);
+</script>
+<br />
+
+<h4>JavaScript Class Method</h4>
+<p>Pass a parameter into the "age()" method.</p>
+
+<p id="pCarDetails"></p>
+
+<script>
+    class Car {
+        constructor(name, year)
+        {
+            this.name = name;
+            this.year = year;
+        }
+        age(x)
+        {
+            return x - this.year;
+        }
+    }
+
+    const date = new Date();
+    let year = date.getFullYear();
+
+    const myCar = new Car("Audi", 2022);
+    document.getElementById("pCarDetails").innerHTML =         "Car's age :  " + myCar.age(year) + " years old.";
+</script>
+
+
+<br />
+
+<h4>JSON Sample</h4>
+
+<p id="pExPMs"></p>
+
+<script>
+    let textPMs = '{"ExPrimeMinisters":[' +
+        '{"firstName":"Borris","lastName":"Johnson" },' +
+        '{"firstName":"Rishi","lastName":"Sunak" },' +
+        '{"firstName":"Elizabeth","lastName":"Truss" }]}';
+
+    const obj = JSON.parse(textPMs);
+    document.getElementById("pExPMs").innerHTML =
+        obj.ExPrimeMinisters[0].firstName + " " + obj.ExPrimeMinisters[0].lastName;
+</script>
+ <br />
+
+
+<h4>Callback Functions</h4>
+
+<p>The result of the calculation is:</p>
+<p id="pCallBack"></p>
+
+<script>
+    function myDisplayer(something) {
+        document.getElementById("pCallBack").innerHTML = something;
+    }
+
+    function myCalculator(num1, num2, myCallback) {
+        let sum = num1 + num2;
+        myCallback(sum);
+    }
+
+    myCalculator(5, 5, myDisplayer);
+</script>
+
+ <br />
+<h2>setTimeout() with a Callback</h2>
+
+<p>Wait 2  second  </p>
+
+<h4 id="pWait"></h4>
+
+<script>
+    setTimeout(showWaitTime, 2000);
+
+    function showWaitTime() {
+        document.getElementById("pWait").innerHTML = new Date(); 
+    }
+</script>
+<br />
+<h4>setInterval() with a Callback</h4>
+
+<p>SetInterval to display the time every second (1000 milliseconds).</p>
+
+<h4 id="pShowIntervalTime"></h4>
+
+<script>
+    setInterval(showTimeInSeconds, 1000);
+
+    function showTimeInSeconds() {
+        let d = new Date();
+        document.getElementById("pShowIntervalTime").innerHTML =
+            d.getHours() + ":" +
+            d.getMinutes() + ":" +
+            d.getSeconds();
+    }
+</script>
+<br />
+<p id="pAsync"></p>
+
+<script>
+    async function getFile() {
+        let myPromise = new Promise(function (resolve) {
+            let req = new XMLHttpRequest();
+            req.open('GET', "MyPic.html");
+            req.onload = function () {
+                if (req.status == 200) {
+                    resolve(req.response);
+                } else {
+                    resolve("File not Found");
+                }
+            };
+            req.send();
+        });
+        document.getElementById("pAsync").innerHTML = await myPromise;
+    }
+
+    getFile();
+</script>
+<br />
+<h4>onclick</h4>
+
+<h4 onclick="changeText(this)">Click on this text!</h4>
+
+<script>
+    function changeText(id) {
+        id.innerHTML = "You clicked on the text!";
+    }
+</script>
+
+                <br />
+<h2>The oninput Attribute</h2>
+
+Enter your name:
+<input type="text" id="fname" oninput="upperCase()">
+<p>When you type the  function is called to convert the text to upper case.</p>
+
+<script>
+    function upperCase() {
+        const x = document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+    }
+</script>
+<br />
+<h2>The onmouseover Attribute</h2>
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)"
+     style="background-color:#105599;width:220px;height:20px;padding:40px;">
+    Mouse Over Me
+</div>
+
+<script>
+    function mOver(obj) {
+        obj.innerHTML = "Thank You"
+    }
+
+    function mOut(obj) {
+        obj.innerHTML = "Mouse Over Me"
+    }
+</script>

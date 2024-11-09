@@ -1,0 +1,91 @@
+﻿@page
+@model JavascriptSamples.Pages.InheritanceModel
+@{
+}
+
+<head>
+    <title>
+
+
+    </title>
+
+
+
+</head>
+
+
+<h1>JavaScript   Inheritance</h1>
+
+<p>Use the "extends" keyword to inherit all methods from another class.</p>
+<p>Use the "super" method to call the parent's constructor function.</p>
+
+<p id="pCar"></p>
+
+<script>
+    class Car {
+        constructor(brand) {
+            this.carname = brand;
+        }
+        present() {
+            return 'My Car is ' + this.carname;
+        }
+    }
+
+    class Model extends Car {
+        constructor(brand, mod) {
+            super(brand);
+            this.model = mod;
+        }
+        show() {
+            return this.present() + ', the model is ' + this.model;
+        }
+    }
+
+    const myCar = new Model("Mercedes", "GLA");
+    document.getElementById("pCar").innerHTML = myCar.show();
+</script>
+
+<br />
+<h4>JavaScript Class Getter/Setter</h4>
+ 
+<p id="pGet"></p>
+
+<script>
+    class CarSet {
+        constructor(brand) {
+            this.carname = brand;
+        }
+        get cnam() {
+            return this.carname;
+        }
+        set cnam(x) {
+            this.carname = x;
+        }
+    }
+
+    const myCarGet = new CarSet("Mercedes");
+
+    document.getElementById("pGet").innerHTML = myCarGet.cnam;
+</script>
+<br />
+<h4>JavaScript Class Static Methods</h4>
+<p>A static method is created with the "static" keyword, and you can only call the method on the class itself.</p>
+
+<p id="pCarStatic"></p>
+
+<script>
+    class CarStatic {
+        constructor(name) {
+            this.name = name;
+        }
+        static hello() {
+            return "My car details";
+        }
+    }
+
+    const myCarStatid = new Car("Mercedes");
+
+ 
+    document.getElementById("pCarStatic").innerHTML = CarStatic.hello();
+ 
+</script>

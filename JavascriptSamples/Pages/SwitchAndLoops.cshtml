@@ -1,0 +1,258 @@
+﻿@page
+@model JavascriptSamples.Pages.SwitchStatementModel
+@{
+}
+<head>
+    <title>
+
+
+    </title>
+
+
+
+    </head>
+
+
+<p id="pDay"></p>
+
+<script>
+    let day;
+    switch (new Date().getDay()) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+    }
+    document.getElementById("pDay").innerHTML = "Today is " + day;
+</script>
+<br />
+<p id="pWeekend"></p>
+<script>
+    let text;
+    switch (new Date().getDay()) {
+        case 4:
+        case 5:
+            text = "Soon it is Weekend";
+            break;
+        case 0:
+        case 6:
+            text = "It is Weekend";
+            break;
+        default:
+            text = "Looking forward to the Weekend";
+    }
+    document.getElementById("pWeekend").innerHTML = text;
+</script>
+
+    <br />
+
+<p id="pCars"></p>
+
+<script>
+    const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+
+    let textCars = "";
+    for (let i = 0; i < cars.length; i++) {
+        textCars += cars[i] + "<br>";
+    }
+
+    document.getElementById("pCars").innerHTML = textCars;
+</script>
+
+
+<p id="pLoopNumber"></p>
+
+<script>
+    let txtNumber = "";
+
+    for (let i = 0; i < 5; i++) {
+        txtNumber += "The number is " + i + "<br>";
+    }
+
+    document.getElementById("pLoopNumber").innerHTML = txtNumber;
+</script>
+<br />
+
+<p id="dPname"></p>
+
+<script>
+    const person = { fname: "John", lname: "Paul", age: 85 };
+
+    let txtPerson = "";
+    for (let x in person) {
+        txtPerson += person[x] + " ";
+    }
+
+    document.getElementById("dPname").innerHTML ="Personal details: "+ txtPerson;
+</script>
+<br />
+
+<p id="demoWhile"></p>
+
+<script>
+    let textWhile = "";
+    let i = 0;
+    while (i < 10) {
+        if (i === 7) { break; }
+        textWhile += "<br>The number is " + i;
+        i++;
+    }
+    document.getElementById("demoWhile").innerHTML = textWhile;
+
+</script>
+
+
+<p id="demoContinue"></p>
+
+<script>
+    let textContinue = "";
+    for (let i = 0; i < 10; i++) {
+        if (i === 3) { continue; }
+        textContinue += "The number is " + i + "<br>";
+    }
+    document.getElementById("demoContinue").innerHTML = textContinue;
+</script>
+
+<br />
+<p id="demoSet"></p>
+<p id="demoSetCaption"></p>
+<p id="demoSetMembers"></p>
+
+<script>
+    // Create a Set
+    const lettersSet = new Set();
+
+    // Create Variables
+    const a = "a";
+    const b = "b";
+    const c = "c";
+
+    // Add Values as Variables to the Set
+    lettersSet.add(a);
+    lettersSet.add(b);
+    lettersSet.add(c);
+
+    // Display the Size
+    document.getElementById("demoSet").innerHTML = "The set has " + lettersSet.size + " values.";
+
+    document.getElementById("demoSetCaption").innerHTML = "The numbers in the set are";
+    // List all Elements
+    let textSet = "";
+    for (const x of lettersSet) {
+        textSet += x + "<br>";
+    }
+    document.getElementById("demoSetMembers").innerHTML = textSet;
+
+</script>
+
+    <br>
+<p>The has() method returns true if a set contains a given value:</p>
+
+<p id="pCheskValue"></p>
+
+<script>
+     
+    const lettersToCheckValue = new Set(["x","y","z"]);
+
+     
+    answer = lettersToCheckValue.has("d");
+    document.getElementById("pCheskValue").innerHTML = "The result is " + answer;
+</script>
+
+<br />
+<p>forEach() method used to get each element in a Set:</p>
+
+<p id="pEachItem"></p>
+
+<script>
+   
+    const lettersForEach = new Set(["a", "b", "c", "e", "f", "g"]);
+
+     
+    let textForEach = "";
+    lettersForEach.forEach(function (value) {
+        textForEach += value + "<br>";
+    })
+
+    document.getElementById("pEachItem").innerHTML = textForEach;
+</script>
+<br />
+<p id="demoMapCarsHeader"> Get value using text from MAP</p>
+<p id="demoMapCars"> </p>
+
+<script>
+     
+    const mapCars = new Map([
+        ["Mercedes", 500],
+        ["Audi", 300],
+        ["Tesla", 200],
+        ["Toyota", 350],
+        ["Honda", 400],
+        ["Tata", 225]
+    ]);
+
+    document.getElementById("demoMapCars").innerHTML = mapCars.get("Audi");
+</script>
+
+<br />
+
+<p id="pMapCarsBeforeDelete"></p>
+<p id="pMapCarsAfterDelete"></p>
+
+<script>
+     
+    const mapCarsToDelete = new Map([
+        ["Mercedes", 500],
+        ["BMW", 300],
+        ["Audi", 200],
+        ["Honda", 550],
+        ["Toyota", 350],
+        ["Nissan", 250]
+    ]);
+    document.getElementById("pMapCarsBeforeDelete").innerHTML ="Before delete: "+ mapCarsToDelete.size;
+    // Delete an Element
+
+    mapCarsToDelete.delete("Audi");
+
+    document.getElementById("pMapCarsAfterDelete").innerHTML ="After delete: "+ mapCarsToDelete.size;
+</script>
+
+<br />
+
+<p id="pMapCarList"></p>
+
+<script>
+    
+    const listMapCars = new Map([
+        ["Mercedes", 500],
+        ["BMW", 300],
+        ["Audi", 200],
+        ["Honda", 550],
+        ["Toyota", 350],
+        ["Nissan", 250]
+    ]);
+
+    let textMapCarList = "";
+    for (const x of listMapCars.entries()) {
+        textMapCarList += x + "<br>";
+    }
+
+    document.getElementById("pMapCarList").innerHTML = textMapCarList;
+
+    </script>

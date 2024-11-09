@@ -2,3 +2,339 @@
 @model ArrayMehodsModel
 @{
 }
+
+
+<head>
+    <title>
+
+
+    </title>
+
+
+
+</head>
+
+    <script>
+
+        
+
+
+
+
+    </script>
+
+    <p>The pop() method removes the last element from an array.</p>
+
+    <p id="CarBeforePop"></p>
+    <p id="CarAfterPop"></p>
+
+    <script>
+        const cars = ["Ford", "Honda", "Toyota", "NIssan"];
+        document.getElementById("CarBeforePop").innerHTML = cars;
+        cars.pop();
+        document.getElementById("CarAfterPop").innerHTML = cars;
+    </script>
+
+
+
+
+    <p>The push() method appends a new element to an array:</p>
+
+    <p id="fruitBeforePush"></p>
+    <p id="fruitAfterPush"></p>
+
+    <script>
+
+    const fruits = ["Pineapple", "Grapes", "Pear", "Mango"];
+        function addFruitToList()
+        {
+        
+        document.getElementById("fruitBeforePush").innerHTML = fruits;
+        fruits.push(document.getElementById("txtFruitToAdd").value);
+        document.getElementById("fruitAfterPush").innerHTML = fruits;
+
+
+        }
+
+
+    </script>
+
+    <div>
+        <table>
+            <tr>
+                <td>
+                Provide the fruit to add<input type="text" id="txtFruitToAdd" name="txtFruitToAdd">
+                </td>
+            </tr>
+
+               <tr>
+                <td>
+                <button type="button" onclick="addFruitToList();">
+                    Add this fruit
+                </button>
+                </td>
+            </tr>
+
+
+        </table>
+    </div>
+
+
+
+
+
+<p>The shift method removes the first element of an array </p>
+
+<p id="fruitsbeforeShift"> </p>
+
+<p id="fruitsAfterShft"> </p>
+     
+<script>
+
+
+
+    const shiftFruitsList = ["Pineapple", "Grapes", "Pear", "Mango"];
+
+    function shiftFruits()
+    {
+        
+       
+        document.getElementById("fruitsbeforeShift").innerHTML = shiftFruitsList;
+         
+        shiftFruitsList.shift();
+         
+        document.getElementById("fruitsAfterShft").innerHTML = shiftFruitsList;
+        
+    }
+
+</script>
+
+<div>
+
+
+
+    
+
+    <table>
+         
+        
+
+        <tr>
+            <td>
+                <button type="button" onclick="shiftFruits();">
+                    Click to shift
+                </button>
+            </td>
+        </tr>
+
+
+    </table>
+</div>
+
+<br /> <br />
+
+
+<p id="fruitsBeforeDelete"></p>
+<p id="fruitsAfterDelete"></p>
+
+<script>
+
+    const fruitsToDelete = ["Banana", "Orange", "Apple", "Mango"];
+    function  deleteFruit()
+    {
+
+       
+        document.getElementById("fruitsBeforeDelete").innerHTML = fruitsToDelete;
+
+        delete fruitsToDelete[document.getElementById("txtFruitToDelete").value];
+
+        document.getElementById("fruitsAfterDelete").innerHTML = fruitsToDelete;
+    }
+
+
+</script>
+
+
+
+        <div>
+            <table>
+                <tr>
+                    <td>
+                Provide the index to delete<input type="text" id="txtFruitToDelete" name="txtFruitToDelete">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="deleteFruit();">
+                            Click to Delete
+                         </button>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+
+
+<br />
+<br />
+
+
+<p id="fruitsBeforeSort"></p>
+<p id="fruitsAfterSort"></p>
+
+<script>
+
+    const fruitsToSort = ["Banana", "Orange", "Apple", "Mango"];
+    function sortFruit() {
+
+       
+        document.getElementById("fruitsBeforeSort").innerHTML ='Before sort:    '+ fruitsToSort;
+
+        fruitsToSort.sort();
+
+        document.getElementById("fruitsAfterSort").innerHTML = 'After sort:    ' +fruitsToSort;
+    }
+
+    function reverseFruit() {
+
+
+        document.getElementById("fruitsBeforeSort").innerHTML = 'Before reverse:    ' + fruitsToSort;
+
+        fruitsToSort.reverse();
+
+        document.getElementById("fruitsAfterSort").innerHTML = 'After reverse:    ' + fruitsToSort;
+    }
+
+</script>
+
+
+
+<div>
+    <table>
+        <tr>
+            <td>
+                <button type="button" onclick="sortFruit();">
+                Click to Sort
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="reverseFruit();">
+                    Click to Reverse
+                </button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+<br /><br />
+
+<p id="listInOrder"></p>
+
+<script>
+    const points = [40, 100, 1, 5, 25, 10];
+    document.getElementById("listInOrder").innerHTML = points;
+
+    function sorAlpha() {
+        points.sort();
+        document.getElementById("listInOrder").innerHTML = points;
+    }
+
+    function sortNum() {
+        points.sort(function (a, b) { return a - b });
+        document.getElementById("listInOrder").innerHTML = points;
+    }
+</script>
+<div>
+
+
+<button onclick="sorAlpha()">Sort Alphabetically</button>
+<button onclick="sortNum()">Sort Numerically</button>
+</div>
+<br /><br />
+
+<p>Call a function once for each array element:</p>
+
+<p id="arayIteration"></p>
+
+<script>
+    const numbers = [45, 4, 9, 16, 25];
+
+    let txt = "";
+    numbers.forEach(listEachItem);
+    document.getElementById("arayIteration").innerHTML = txt;
+
+    function listEachItem(value, index, array) {
+        txt += value + "<br>";
+    }
+
+
+    
+
+</script>
+
+
+
+<p>Create a new array from all array elements that passes a test:</p>
+
+<p id="filterResult"></p>
+
+<script>
+    const numberToFilter = [45, 4, 9, 16, 25];
+    const over18 = numberToFilter.filter(myFunction);
+
+    document.getElementById("filterResult").innerHTML = over18;
+
+    function myFunction(value, index, array) {
+         
+        return value > 18;
+    }
+</script>
+
+<p>Find the sum of all numbers in an array:</p>
+
+<p id="numbersToadded"></p>
+<p id="addedNumber"></p>
+
+<script>
+    const numbersToAdd = [1,2,5,4,5, 4, 9, 2, 5];
+
+    document.getElementById("numbersToadded").innerHTML ='Numbers in the array: '+ numbersToAdd;
+
+    let sum = numbersToAdd.reduce(myFunction);
+
+    document.getElementById("addedNumber").innerHTML = "The sum is " + sum;
+
+    function myFunction(total, value, index, array) {
+        return total + value;
+    }
+</script>
+
+<h2>The ... Operator</h2>
+
+<p>The "spread" operator spreads elements of iterable objects:</p>
+
+<p id="qYear1"></p>
+<p id="qYear2"></p>
+<p id="qYear3"></p>
+<p id="qYear4"></p>
+<p id="qYear"></p>
+
+<script>
+    const q1 = ["Jan", "Feb", "Mar"];
+    const q2 = ["Apr", "May", "Jun"];
+    const q3 = ["Jul", "Aug", "Sep"];
+    const q4 = ["Oct", "Nov", "May"];
+    document.getElementById("qYear1").innerHTML = "Quarter 1 : " + q1;
+    document.getElementById("qYear2").innerHTML = "Quarter 2 : " +q2;
+    document.getElementById("qYear3").innerHTML = "Quarter 3 : " + q3;
+    document.getElementById("qYear4").innerHTML = "Quarter 4 : " +q4;
+
+
+    const year = [...q1, ...q2, ...q3, ...q4];
+    document.getElementById("qYear").innerHTML = year;
+</script>
+
+ 

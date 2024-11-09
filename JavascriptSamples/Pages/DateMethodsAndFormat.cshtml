@@ -1,0 +1,85 @@
+﻿@page
+@model JavascriptSamples.Pages.DateMethodsAndFormatModel
+@{
+}
+
+<head>
+    <title>
+
+
+    </title>
+
+
+
+</head>
+
+<p id="pDate"></p>
+
+<script>
+    const dYYYYMMDD = new Date();
+    document.getElementById("pDate").innerHTML = "Current date is : " + dYYYYMMDD;
+</script>
+
+
+<p id="pDatewithformatYYYYMMDD"></p>
+
+<script>
+    const dt = new Date("2024-12-25");
+    document.getElementById("pDatewithformatYYYYMMDD").innerHTML =  dt;
+
+</script>
+
+<p id="pD"> </p>
+
+<p id = "pds" > </p>
+<p id = "pDMTDTIME">  </p>
+
+
+
+<script>
+
+    const d= new Date();
+    document.getElementById("pD").innerHTML ='Format1:' + d;
+</script>
+
+ 
+   
+<script>
+    const dMTDTIME = new Date(2018, 11, 24, 10, 33, 30, 0);
+    document.getElementById("pDMTDTIME").innerHTML = dMTDTIME;
+
+
+
+</script>
+
+<p>Return the full year of a date object:</p>
+
+<p id="pDYear"></p>
+
+<script>
+    const dYear = new Date();
+    document.getElementById("pDYear").innerHTML = "Year: " + dYear.getFullYear();
+</script>
+<p id="pYMonth"></p>
+
+<script>
+    const dYMonth = new Date();
+     
+    document.getElementById("pYMonth").innerHTML =   dYMonth.getMonth() + 1;
+</script>
+
+<p id="pDateNow"></p>
+
+<script>
+    const dDate = new Date();
+    document.getElementById("pDateNow").innerHTML = "Date: " + dDate.getDate();
+</script>
+
+<p id="pDHours"></p>
+
+<script>
+    const dHours = new Date();
+    document.getElementById("pDHours").innerHTML ="Hour : "+ dHours.getHours();
+</script>
+
+

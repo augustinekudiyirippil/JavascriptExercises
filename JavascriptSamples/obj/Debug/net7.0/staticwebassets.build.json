@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bJtg4olHIqtm+UEFHUaHtgwTduttgnR4MGNCsahnD+s=",
+  "Hash": "plizW33OIQk2AbBHBf1NiktFFUb57QmwymH2RaPBPO4=",
   "Source": "JavascriptSamples",
   "BasePath": "_content/JavascriptSamples",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Augustine\\Javascript excercises\\Javascript samples\\JavascriptSamples\\wwwroot\\Images\\Apple1.jpg",
+      "SourceId": "JavascriptSamples",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Augustine\\Javascript excercises\\Javascript samples\\JavascriptSamples\\wwwroot\\",
+      "BasePath": "_content/JavascriptSamples",
+      "RelativePath": "Images/Apple1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Apple1.jpg"
     },
     {
       "Identity": "D:\\Augustine\\Javascript excercises\\Javascript samples\\JavascriptSamples\\wwwroot\\js\\JSVariables.js",
