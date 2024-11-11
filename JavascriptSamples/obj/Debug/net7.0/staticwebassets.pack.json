@@ -5,8 +5,20 @@
       "PackagePath": "staticwebassets\\JavascriptSamples.bundle.scp.css"
     },
     {
+      "Id": "D:\\Augustine\\Javascript excercises\\Javascript samples\\JavascriptSamples\\wwwroot\\Images\\Acer1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Acer1.jpg"
+    },
+    {
       "Id": "D:\\Augustine\\Javascript excercises\\Javascript samples\\JavascriptSamples\\wwwroot\\Images\\Apple1.jpg",
       "PackagePath": "staticwebassets\\Images\\Apple1.jpg"
+    },
+    {
+      "Id": "D:\\Augustine\\Javascript excercises\\Javascript samples\\JavascriptSamples\\wwwroot\\Images\\Headset1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Headset1.jpg"
+    },
+    {
+      "Id": "D:\\Augustine\\Javascript excercises\\Javascript samples\\JavascriptSamples\\wwwroot\\Images\\Samsung1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Samsung1.jpg"
     },
     {
       "Id": "D:\\Augustine\\Javascript excercises\\Javascript samples\\JavascriptSamples\\wwwroot\\css\\site.css",
